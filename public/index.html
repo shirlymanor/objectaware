@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Screenshot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Cloudinary Object Aware AI</h1>
+        <div class="instruction">
+            <p>Enter public id and the URL you want to test
+            </p>
+        </div>
+        <div class="container">
+            <form id="object-form">
+                <fieldset>
+                    <input type="url" id="url" name="url"  aria-label="URL" placeholder="URL for image to remove form" value="https://res.cloudinary.com/dtmvrjb50/image/upload/strawberry.jpg">
+                </fieldset>
+                <fieldset>
+                    <input type="text" id="publicid" name="url" aria-label="publicid" placeholder="Public ID for new image"
+                        value="">
+                </fieldset>
+                <fieldset>
+                    <button type="submit">Show the AI results</button>
+                </fieldset>
+            </form>
+        </div>
+        <div id="warning"></div>
+        <div id="result"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
