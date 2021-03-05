@@ -4,7 +4,7 @@ async function cldUpload(options) {
       let data = await response.json();
       const img = document.createElement("img");
       img.src = data.secure_url;
-      img.alt = "bgremoval";
+      img.alt = "object aware";
       document.getElementById("result").innerHTML = img.outerHTML;
     } catch (error) {
       console.log("client error", error);
