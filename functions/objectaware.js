@@ -4,23 +4,20 @@ exports.handler = async (event, context) => {
   console.log(
     "config",
     cloudinary.config({
-      cloud_name: process.env.CLOUD_NAME,
-      api_key: process.env.API_KEY,
-      api_secret: process.env.API_SECRET,
+      cloud_name: process.env.cloud_name,
+      api_key: process.env.api_key,
+      api_secret: process.env.api_secret,
     }).cloud_name
   );
-  console.log("logging process.env", process.env.CLOUD_NAME);
+  console.log("logging process.env", process.env.cloud_name);
 
   const existingUrl = JSON.parse(event.body).url;
   const newPublicId = JSON.parse(event.body).publicid;
-  const tag = JSON.parse(event.body).tag;
-  console.log(existingUrl, newPublicId, tag);
+  console.log(existingUrl, newPublicId);
 
   try {
     const result = await cloudinary.uploader.upload(existingUrl, {
-      public_id: newPublicId,
-      tag: tag,
-      background_removal: 'cloudinary_ai',
+      public_id: newPublicId
     });
     const retBody = JSON.stringify({ secure_url: result.secure_url });
     console.log(retBody);

@@ -1,6 +1,6 @@
 async function cldUpload(options) {
     try {
-      let response = await fetch("/.netlify/functions/bgremoval", options);
+      let response = await fetch("/.netlify/functions/objectaware", options);
       let data = await response.json();
       const img = document.createElement("img");
       img.src = data.secure_url;
@@ -18,7 +18,6 @@ async function cldUpload(options) {
   
       const url = document.getElementById("url").value;
       const publicId = document.getElementById("publicid").value;
-      const tag = document.getElementById("tag").value;
   
       /* validate input */
       let warning = "";
@@ -33,7 +32,7 @@ async function cldUpload(options) {
       const options = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: url, publicid: publicId, tag: tag }),
+        body: JSON.stringify({ url: url, publicid: publicId }),
       };
      cldUpload(options);
      
